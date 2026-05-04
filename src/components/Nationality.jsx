@@ -39,7 +39,7 @@ const Nationality = () => {
   return (
    <div className="d-flex flex-column justify-content-center align-items-center p-5">
   <button className="btn btn-primary" onClick={fetchdata}>
-    Generate Name
+    Get Name
   </button>
 
   {!national ? (
