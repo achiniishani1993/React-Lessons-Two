@@ -1,2 +1,2 @@
 # React-Lessons-Two
-Practice UseEffect &amp; Api
+Practice UseEffect & Api
