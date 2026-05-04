@@ -4,7 +4,7 @@ const Nationality = () => {
   const [national, setNational] = useState(null);
   const [guess, setGuess] = useState("");
   const [result, setResult] = useState("");
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(10);
   const [showResult, setShowResult] = useState(false);
 
   const fetchdata = async () => {
@@ -28,47 +28,56 @@ const Nationality = () => {
 
     if (guess.toUpperCase() === correct) {
       setResult("Correct!");
-      setScore(score + 1);
+      setShowResult(true);
     } else {
-      setResult(`Wrong! Correct answer: ${correct}`);
+      setResult(`Wrong Answer...! Try again`);
+      setScore((prev)=> prev -1 );
     }
 
-     setShowResult(true);
   };
 
   return (
-    <div>
-      <button onClick={fetchdata}>Generate Name</button>
+   <div className="d-flex flex-column justify-content-center align-items-center p-5">
+  <button className="btn btn-primary" onClick={fetchdata}>
+    Generate Name
+  </button>
 
-      {!national ? (
-        <p>Click button to start game</p>
-      ) : (
-        <>
-          <p>Name: {national.name}</p>
+  {!national ? (
+    <p className="mt-3">Click button to start game</p>
+  ) : (
+    <>
+      <p className="mt-3">Name: {national.name}</p>
 
-          <h3>Guess the top country Examples: US, NE, GH, NG, ID:</h3>
+      <h3 className="mt-3">
+        Guess the top country Examples: US, NE, GH, NG, ID:
+      </h3>
 
-          <input
-            type="text"
-            value={guess}
-            onChange={(e) => setGuess(e.target.value)}
-          />
+      <input
+        className="form-control w-50 mt-2"
+        type="text"
+        value={guess}
+        onChange={(e) => setGuess(e.target.value)}
+      />
 
-          <button onClick={handleGuess}>Guess</button>
+      <button className="btn btn-warning mt-3" onClick={handleGuess}>
+        Guess
+      </button>
 
-          <p>{result}</p>
-          <p>Score: {score}</p>
+      <p className="mt-2 text-danger">{result}</p>
+      <p>Score: {score}</p>
 
-          {showResult && (<ul>
-            {national.country.map((c, index) => (
-              <li key={index}>
-                {c.country_id} — {(c.probability * 100).toFixed(2)}%
-              </li>
-            ))}
-          </ul>)}
-        </>
+      {showResult && (
+        <ul className="mt-3">
+          {national.country.map((c, index) => (
+            <li key={index}>
+              {c.country_id} — {(c.probability * 100).toFixed(2)}%
+            </li>
+          ))}
+        </ul>
       )}
-    </div>
+    </>
+  )}
+</div>
   );
 };
 
