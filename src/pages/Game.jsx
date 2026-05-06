@@ -1,8 +1,11 @@
 import React from 'react'
+import Nationality from '../components/Nationality'
 
 const Game = () => {
   return (
-    <div>Game</div>
+    <div>
+      <Nationality/>
+    </div>
   )
 }
 

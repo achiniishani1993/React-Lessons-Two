@@ -2,8 +2,13 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+const navigate = useNavigate();
+
+
+
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
       <div className="p-4 bg-white shadow rounded" style={{ width: "350px" }}>
@@ -25,7 +30,7 @@ const Login = () => {
           <Form.Control type="password" placeholder="Password" />
         </FloatingLabel>
 
-        <Button variant="primary" type="submit" className="w-100">
+        <Button variant="primary" type="submit" className="w-100"  onClick={() => navigate("/game")}>
           Login
         </Button>
 
