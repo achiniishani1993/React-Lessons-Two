@@ -1,6 +1,7 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -30,9 +31,9 @@ const Login = () => {
 
         <p className="text-center mt-3 mb-0">
           No account?
-          <span className="text-primary" style={{ cursor: "pointer" }}>
+          <Link to="/register" className="text-primary" style={{ cursor: "pointer" }}>
             Register
-          </span>
+          </Link>
         </p>
       </div>
     </div>
