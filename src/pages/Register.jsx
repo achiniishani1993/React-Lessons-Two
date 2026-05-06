@@ -25,6 +25,8 @@ const Register = () => {
     alert("Password do not matched, try again")
     return;
   }
+  localStorage.setItem("username", username);
+  localStorage.setItem("password" , password);
    alert("Registration successfully done...!!")
   }
 
