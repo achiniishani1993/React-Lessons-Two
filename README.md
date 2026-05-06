@@ -29,3 +29,27 @@ A simple React-based game where users guess the most likely country based on a g
 🔗 API Used
 
 https://api.nationalize.io?name=nathaniel
+
+# React Login & Register System (LocalStorage Auth)
+
+This is a simple authentication system built with **React + React Bootstrap** using **localStorage**.  
+It includes Register, Login, Protected Routes, and Logout functionality.
+
+---
+
+# Features
+
+- User Registration
+- Login Authentication
+- Password confirmation validation
+- Logout functionality
+- Persistent login using `localStorage`
+- Simple UI using React Bootstrap
+
+# Tech Stack
+
+- React JS
+- React Router DOM
+- React Bootstrap
+- JavaScript (ES6)
+- localStorage (for data persistence)
