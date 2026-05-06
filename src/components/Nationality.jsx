@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Nationality = () => {
+  const navigate = useNavigate();
+
+
   const [national, setNational] = useState(null);
   const [guess, setGuess] = useState("");
   const [result, setResult] = useState("");
   const [score, setScore] = useState(10);
   const [showResult, setShowResult] = useState(false);
+
 
   const fetchdata = async () => {
     try {
@@ -35,6 +40,11 @@ const Nationality = () => {
     }
 
   };
+
+  const handleLogout =()=>{
+    localStorage.removeItem("isLoggedIn");
+    navigate("/");
+  }
 
   return (
    <div className="d-flex flex-column justify-content-center align-items-center p-5">
@@ -75,6 +85,10 @@ const Nationality = () => {
           ))}
         </ul>
       )}
+
+       <button className="btn btn-danger mt-3" onClick={handleLogout}>
+        Logout
+      </button>
     </>
   )}
 </div>

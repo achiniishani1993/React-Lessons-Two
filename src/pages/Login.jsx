@@ -19,7 +19,8 @@ const currentUsername = localStorage.getItem("username");
 const currentPassword = localStorage.getItem("password");
 
 if (username === currentUsername && password === currentPassword){
-  alert("Login Success...!")
+  alert("Login Success...!");
+   localStorage.setItem("isLoggedIn", "true");
    navigate("/game");
 }else {
   alert("Invalid password or username");
